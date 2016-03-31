@@ -28,23 +28,36 @@ html,body {
 }
 
 .Main {
+  position: relative;
   width: 100vw;
   height: 100%;
-  margin: 0 20px;
   background: gray(251);
-  overflow: hidden;
+  background: gray(231);
+
   &-contentNav {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
     width: 100%;
     height: 0px;
   }
+
   &-content {
+    position: absolute;
+    z-index: 1;
     width: 100%;
     height: 100%;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
   }
+
   &-container {
     max-width: 1000px;
     margin: 0 auto;
+    padding: 16px;
+    > .Grid {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -52,7 +65,8 @@ html,body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-height: calc(100vh - 60px);
+  min-height: 200px;
+  max-height: calc(100vh - var(--nav-height) - var(--content-margin) - var(--content-margin));
   overflow: hidden;
 
   &-title {
@@ -63,13 +77,14 @@ html,body {
   }
 
   &-search {
-    background: gray(251);
+    background: gray(245);
     font-size: 1.4em;
     border: none;
     padding: 10px 16px;
     border-radius: 2px 2px 0 0;
-    border: 1px solid gray(200);
+    pointer-events: all;
     outline: none;
+
     &:focus {
       background: gray(255);
     }
@@ -77,15 +92,15 @@ html,body {
 
   &-menu {
     position: relative;
-    overflow-y: auto;
-    /*background: gray(230);*/
-    /*flex: 1;*/
-    /*padding: 16px;*/
     border-radius: 0 0 2px 2px;
+    background: gray(255);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    pointer-events: all;
+
     &Item {
-      padding: 8px 16px;
-      /*background: gray(235);*/
-      border-bottom: 1px solid gray(220);
+      padding: .8em 1.6em .8em 1.6em;
+      border-bottom: 1px solid gray(245);
       font-size: 1.4em;
       cursor: pointer;
       &:hover {
@@ -96,20 +111,15 @@ html,body {
 }
 
 .Content {
-  /*background: gray(220);*/
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-
+  background: gray(255);
+  pointer-events: all;
+  min-height: calc(100vh - var(--nav-height) - var(--content-margin) - var(--content-margin));
   &-container {
-
     height: 100%;
     padding: 30px;
-    /*flex: 1;*/
-    /*background: gray(230);*/
 
     > p {
       height: 180px;
-      background: gray(240);
     }
   }
 }
