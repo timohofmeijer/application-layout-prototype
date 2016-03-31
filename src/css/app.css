@@ -1,0 +1,148 @@
+@import './solved/components/grid.css';
+@import './solved/utils/media.css';
+
+html,body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  background: gray(120);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.Nav {
+  background: #2A4150;
+  width: 100vw;
+  height: 60px;
+  min-height: 60px;
+}
+
+.Main {
+  width: 100vw;
+  height: 100%;
+  margin: 0 20px;
+  background: gray(251);
+  overflow: hidden;
+  &-contentNav {
+    width: 100%;
+    height: 0px;
+  }
+  &-content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+  &-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+.Toc {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: calc(100vh - 60px);
+  overflow: hidden;
+
+  &-title {
+    font-size: 22px;
+    line-height: 1.1;
+    color: #001D30;
+    margin: 0.8em 0;
+  }
+
+  &-search {
+    background: gray(251);
+    font-size: 1.4em;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 2px 2px 0 0;
+    border: 1px solid gray(200);
+    outline: none;
+    &:focus {
+      background: gray(255);
+    }
+  }
+
+  &-menu {
+    position: relative;
+    overflow-y: auto;
+    /*background: gray(230);*/
+    /*flex: 1;*/
+    /*padding: 16px;*/
+    border-radius: 0 0 2px 2px;
+    &Item {
+      padding: 8px 16px;
+      /*background: gray(235);*/
+      border-bottom: 1px solid gray(220);
+      font-size: 1.4em;
+      cursor: pointer;
+      &:hover {
+        background: gray(240);
+      }
+    }
+  }
+}
+
+.Content {
+  /*background: gray(220);*/
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &-container {
+
+    height: 100%;
+    padding: 30px;
+    /*flex: 1;*/
+    /*background: gray(230);*/
+
+    > p {
+      height: 180px;
+      background: gray(240);
+    }
+  }
+}
+
+
+
+
+
+
+/*.Sidebar {
+  position: relative;
+  width: 33.33333333%;
+  max-width: 340px;
+  background: gray(150);
+  display: flex;
+  display: none;
+  flex-direction: column;
+
+  &-title {
+    font-size: 35px;
+  }
+
+  &-menu {
+    position: relative;
+    overflow-y: auto;
+    background: gray(180);
+    flex: 1;
+    padding: 16px;
+
+    &Item {
+      position: relative;
+      height: 10px;
+      background: gray(200);
+      margin-bottom: 8px;
+    }
+  }
+}*/
