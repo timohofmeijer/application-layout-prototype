@@ -113,6 +113,7 @@ html,body {
 
 .Content {
   background: gray(255);
+  border-radius: 2px;
   pointer-events: all;
   min-height: calc(100vh - var(--nav-height) - var(--content-margin) - var(--content-margin));
   &-container {
