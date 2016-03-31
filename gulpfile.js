@@ -5,6 +5,7 @@ var postcss = require('gulp-postcss');
 var inlineImport = require("postcss-import")
 var nested = require('postcss-nested');
 var autoprefixer = require('autoprefixer');
+var variables = require('postcss-custom-properties');
 var gray = require('postcss-color-gray');
 
 // Postprocess css
@@ -13,7 +14,8 @@ gulp.task('postcss', ['clean-css'], function() {
     autoprefixer({browsers: ['last 1 version']}),
     inlineImport(),
     gray(),
-    nested()
+    nested(),
+    variables()
   ];
   return gulp.src('./src/css/*.css')
     .pipe(postcss(processors))

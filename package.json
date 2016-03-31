@@ -10,6 +10,7 @@
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "postcss-color-gray": "^3.0.0",
+    "postcss-custom-properties": "^5.0.0",
     "postcss-import": "^8.0.2",
     "postcss-nested": "^1.0.0"
   },
