@@ -46,7 +46,7 @@ html,body {
     position: absolute;
     z-index: 1;
     width: 100%;
-    height: 100%;
+    height: calc(100vh - var(--nav-height));;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -78,10 +78,11 @@ html,body {
 
   &-search {
     background: gray(245);
-    font-size: 1.4em;
-    border: none;
+    margin: 0;
     padding: 10px 16px;
+    border: none;
     border-radius: 2px 2px 0 0;
+    font-size: 1.4em;
     pointer-events: all;
     outline: none;
 
